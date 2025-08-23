@@ -46,9 +46,10 @@ Each step is committed separately to show the TDD progression.
 ## Implementation Progress
 
 - [x] Empty string returns 0
-- [ ] Single number returns that number
-- [ ] Two comma-separated numbers return sum
-- [ ] Handle multiple comma-separated numbers
-- [ ] Handle newlines as separators
-- [ ] Support custom delimiters
-- [ ] Validate negative numbers
+- [x] Single number returns that number
+- [x] Two comma-separated numbers return sum
+- [x] Handle multiple comma-separated numbers
+- [x] Handle newlines as separators
+- [x] Support custom delimiters
+- [x] Validate negative numbers
+
