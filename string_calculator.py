@@ -6,7 +6,14 @@ def add(numbers: str) -> int:
     # Handle custom delimiter
     if numbers.startswith("//"):
         delimiter_line, number_string = numbers.split("\n", 1)
-        custom_delimiter = delimiter_line[2:]  # Remove "//"
+        delimiter_part = delimiter_line[2:]  # Remove "//"
+        
+        # Check if delimiter is in bracket format [delimiter]
+        if delimiter_part.startswith("[") and delimiter_part.endswith("]"):
+            custom_delimiter = delimiter_part[1:-1]  # Remove brackets
+        else:
+            custom_delimiter = delimiter_part
+        
         number_string = number_string.replace(custom_delimiter, ",")
         numbers = number_string
     
