@@ -12,4 +12,11 @@ def add(numbers: str) -> int:
     
     numbers = numbers.replace("\n", ",")
     parts = numbers.split(",")
+    
+    # Check for negative numbers
+    negatives = [int(part) for part in parts if int(part) < 0]
+    if negatives:
+        negative_str = ",".join(str(n) for n in negatives)
+        raise ValueError(f"negative numbers not allowed {negative_str}")
+    
     return sum(int(part) for part in parts)
