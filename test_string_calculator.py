@@ -10,3 +10,8 @@ def test_empty_string_returns_zero():
 def test_single_number_returns_that_number():
     """Test that single number returns that number"""
     assert add("1") == 1
+
+
+def test_two_comma_separated_numbers_returns_sum():
+    """Test that two comma-separated numbers return their sum"""
+    assert add("1,5") == 6
