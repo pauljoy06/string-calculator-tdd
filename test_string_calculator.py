@@ -48,3 +48,9 @@ def test_numbers_bigger_than_1000_ignored():
     """Test that numbers bigger than 1000 are ignored"""
     assert add("2,1001") == 2
     assert add("1000,1001,2") == 1002
+
+
+def test_long_delimiters_with_brackets():
+    """Test delimiters of any length with bracket format: //[delimiter]\\n"""
+    assert add("//[***]\n1***2***3") == 6
+    assert add("//[abc]\n1abc2abc3") == 6
