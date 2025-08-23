@@ -13,10 +13,14 @@ def add(numbers: str) -> int:
     numbers = numbers.replace("\n", ",")
     parts = numbers.split(",")
     
-    # Check for negative numbers
-    negatives = [int(part) for part in parts if int(part) < 0]
+    # Convert to integers and check for negative numbers
+    numbers = [int(part) for part in parts]
+    negatives = [num for num in numbers if num < 0]
     if negatives:
         negative_str = ",".join(str(n) for n in negatives)
         raise ValueError(f"negative numbers not allowed {negative_str}")
     
-    return sum(int(part) for part in parts)
+    # Ignore numbers bigger than 1000
+    valid_numbers = [num for num in numbers if num <= 1000]
+    
+    return sum(valid_numbers)
