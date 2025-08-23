@@ -1,3 +1,6 @@
+import re
+
+
 def add(numbers: str) -> int:
     """String calculator that adds numbers from a string."""
     if numbers == "":
@@ -8,13 +11,17 @@ def add(numbers: str) -> int:
         delimiter_line, number_string = numbers.split("\n", 1)
         delimiter_part = delimiter_line[2:]  # Remove "//"
         
-        # Check if delimiter is in bracket format [delimiter]
-        if delimiter_part.startswith("[") and delimiter_part.endswith("]"):
-            custom_delimiter = delimiter_part[1:-1]  # Remove brackets
+        # Check if delimiter is in bracket format [delimiter] or multiple [delim1][delim2]
+        if "[" in delimiter_part and "]" in delimiter_part:
+            # Extract all delimiters between brackets
+            delimiters = re.findall(r'\[([^\]]+)\]', delimiter_part)
+            # Replace all delimiters with comma
+            for delimiter in delimiters:
+                number_string = number_string.replace(delimiter, ",")
         else:
-            custom_delimiter = delimiter_part
+            # Single delimiter without brackets
+            number_string = number_string.replace(delimiter_part, ",")
         
-        number_string = number_string.replace(custom_delimiter, ",")
         numbers = number_string
     
     numbers = numbers.replace("\n", ",")
