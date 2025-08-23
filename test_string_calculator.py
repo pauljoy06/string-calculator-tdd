@@ -20,3 +20,8 @@ def test_two_comma_separated_numbers_returns_sum():
 def test_multiple_comma_separated_numbers_returns_sum():
     """Test that multiple comma-separated numbers return their sum"""
     assert add("1,2,3,4") == 10
+
+
+def test_newline_as_separator():
+    """Test that newlines can be used as separators"""
+    assert add("1\n2,3") == 6
