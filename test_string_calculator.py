@@ -54,3 +54,10 @@ def test_long_delimiters_with_brackets():
     """Test delimiters of any length with bracket format: //[delimiter]\\n"""
     assert add("//[***]\n1***2***3") == 6
     assert add("//[abc]\n1abc2abc3") == 6
+
+
+def test_multiple_delimiters():
+    """Test multiple delimiters: //[delim1][delim2]\\n"""
+    assert add("//[*][%]\n1*2%3") == 6
+    assert add("//[ab][cd]\n1ab2cd3") == 6
+    assert add("//[***][%%%]\n1***2%%%3") == 6
