@@ -45,6 +45,7 @@ Each step is committed separately to show the TDD progression.
 
 ## Implementation Progress
 
+### Core Requirements
 - [x] Empty string returns 0
 - [x] Single number returns that number
 - [x] Two comma-separated numbers return sum
@@ -52,4 +53,16 @@ Each step is committed separately to show the TDD progression.
 - [x] Handle newlines as separators
 - [x] Support custom delimiters
 - [x] Validate negative numbers
+
+### Extended Requirements
+- [x] Numbers bigger than 1000 are ignored
+- [x] Delimiters of any length with bracket format `//[delimiter]\n`
+- [x] Multiple delimiters with format `//[delim1][delim2]\n`
+- [x] Multiple delimiters with length longer than one char
+
+## Test Results
+
+All 11 requirements have been successfully implemented using strict TDD methodology. Each feature was developed following the Red-Green-Refactor cycle with meaningful commit messages showing the progression.
+
+**Final Test Suite**: 11 tests passing, comprehensive coverage of all features and edge cases.
 
