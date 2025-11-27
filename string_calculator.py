@@ -38,3 +38,4 @@ def add(numbers: str) -> int:
     valid_numbers = [num for num in number_list if num <= 1000]
     
     return sum(valid_numbers)
+
